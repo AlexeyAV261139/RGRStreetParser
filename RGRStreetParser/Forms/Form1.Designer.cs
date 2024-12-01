@@ -28,6 +28,7 @@ partial class SubscriberForm
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubscriberForm));
         selectFileBtn = new Button();
         openFileDialog1 = new OpenFileDialog();
         labelFilePath = new Label();
@@ -36,8 +37,10 @@ partial class SubscriberForm
         GetSurnamesBtn = new Button();
         surnamesLB = new ListBox();
         countAbunentsLabel = new Label();
-        panel1 = new Panel();
-        panel1.SuspendLayout();
+        groupBox1 = new GroupBox();
+        groupBox2 = new GroupBox();
+        groupBox1.SuspendLayout();
+        groupBox2.SuspendLayout();
         SuspendLayout();
         // 
         // selectFileBtn
@@ -63,17 +66,18 @@ partial class SubscriberForm
         labelFilePath.TabIndex = 1;
         labelFilePath.Text = "Выбранный файл: ";
         // 
-        // streetTB
+        // targetStreetTextBox
         // 
-        targetStreetTextBox.Location = new Point(104, 156);
-        targetStreetTextBox.Name = "streetTB";
+        targetStreetTextBox.Location = new Point(61, 31);
+        targetStreetTextBox.Name = "targetStreetTextBox";
         targetStreetTextBox.Size = new Size(100, 23);
         targetStreetTextBox.TabIndex = 2;
+        targetStreetTextBox.TextChanged += targetStreetTextBox_TextChanged;
         // 
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(57, 159);
+        label1.Location = new Point(14, 34);
         label1.Name = "label1";
         label1.Size = new Size(41, 15);
         label1.TabIndex = 3;
@@ -81,11 +85,11 @@ partial class SubscriberForm
         // 
         // GetSurnamesBtn
         // 
-        GetSurnamesBtn.Location = new Point(72, 185);
+        GetSurnamesBtn.Location = new Point(12, 161);
         GetSurnamesBtn.Name = "GetSurnamesBtn";
-        GetSurnamesBtn.Size = new Size(97, 23);
+        GetSurnamesBtn.Size = new Size(98, 41);
         GetSurnamesBtn.TabIndex = 4;
-        GetSurnamesBtn.Text = "Поиск";
+        GetSurnamesBtn.Text = "Показать всё";
         GetSurnamesBtn.UseVisualStyleBackColor = true;
         GetSurnamesBtn.Click += GetSurnamesBtn_Click;
         // 
@@ -93,45 +97,59 @@ partial class SubscriberForm
         // 
         surnamesLB.FormattingEnabled = true;
         surnamesLB.ItemHeight = 15;
-        surnamesLB.Location = new Point(16, 17);
+        surnamesLB.Location = new Point(6, 13);
         surnamesLB.Name = "surnamesLB";
-        surnamesLB.Size = new Size(203, 199);
+        surnamesLB.Size = new Size(184, 274);
         surnamesLB.TabIndex = 5;
         // 
         // countAbunentsLabel
         // 
         countAbunentsLabel.AutoSize = true;
-        countAbunentsLabel.Location = new Point(16, 219);
+        countAbunentsLabel.Location = new Point(6, 290);
         countAbunentsLabel.Name = "countAbunentsLabel";
         countAbunentsLabel.Size = new Size(136, 15);
         countAbunentsLabel.TabIndex = 6;
         countAbunentsLabel.Text = "Количество абонентов:";
         // 
-        // panel1
+        // groupBox1
         // 
-        panel1.Controls.Add(surnamesLB);
-        panel1.Controls.Add(countAbunentsLabel);
-        panel1.Location = new Point(282, 60);
-        panel1.Name = "panel1";
-        panel1.Size = new Size(282, 282);
-        panel1.TabIndex = 7;
+        groupBox1.Controls.Add(targetStreetTextBox);
+        groupBox1.Controls.Add(label1);
+        groupBox1.Location = new Point(12, 72);
+        groupBox1.Name = "groupBox1";
+        groupBox1.Size = new Size(200, 83);
+        groupBox1.TabIndex = 8;
+        groupBox1.TabStop = false;
+        groupBox1.Text = "Фильтр";
+        // 
+        // groupBox2
+        // 
+        groupBox2.Controls.Add(surnamesLB);
+        groupBox2.Controls.Add(countAbunentsLabel);
+        groupBox2.Location = new Point(246, 37);
+        groupBox2.Name = "groupBox2";
+        groupBox2.Size = new Size(197, 313);
+        groupBox2.TabIndex = 9;
+        groupBox2.TabStop = false;
         // 
         // SubscriberForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(628, 368);
-        Controls.Add(panel1);
+        ClientSize = new Size(469, 375);
+        Controls.Add(groupBox2);
+        Controls.Add(groupBox1);
         Controls.Add(GetSurnamesBtn);
-        Controls.Add(label1);
-        Controls.Add(targetStreetTextBox);
         Controls.Add(labelFilePath);
         Controls.Add(selectFileBtn);
         FormBorderStyle = FormBorderStyle.Fixed3D;
+        Icon = (Icon)resources.GetObject("$this.Icon");
         Name = "SubscriberForm";
         Text = "Поиск абонентов по улице";
-        panel1.ResumeLayout(false);
-        panel1.PerformLayout();
+        groupBox1.ResumeLayout(false);
+        groupBox1.PerformLayout();
+        groupBox2.ResumeLayout(false);
+        groupBox2.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -146,5 +164,6 @@ partial class SubscriberForm
     private Button GetSurnamesBtn;
     private ListBox surnamesLB;
     private Label countAbunentsLabel;
-    private Panel panel1;
+    private GroupBox groupBox1;
+    private GroupBox groupBox2;
 }

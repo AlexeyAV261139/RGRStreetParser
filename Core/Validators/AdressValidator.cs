@@ -9,14 +9,14 @@ public class AdressValidator : AbstractValidator<Adress>
     {
         RuleFor(adress => adress.Street)
             .NotNull()
-            .MinimumLength(2);
+            .NotEmpty();
 
         RuleFor(adress => adress.HouseNumber)
             .NotNull()
-            .MinimumLength(2);
+            .NotEmpty();
 
         RuleFor(adress => adress.ApartmentNumber)
             .NotNull()
-            .MinimumLength(2);
+            .NotEmpty();
     }
 }

@@ -62,15 +62,27 @@ public partial class SubscriberForm : Form
         IEnumerable<SubscribersData> data = _subscribersDataStorage?.GetSubscribersData()
             ?? throw new SubscriberException("Источник получения данных не установлен");
 
-        var result = targetStreet == string.Empty
+        var result = (targetStreet == string.Empty
             ? data
-            : data.Where(x => x.Adress.Street == targetStreet);  
-        
-        result = result.ToArray();
+            : data.Where(x => x.Adress.Street == targetStreet))
+            .Select(x => x.Initials.Surname)
+            .ToArray();
 
         int count = result.Count();
 
-        surnamesLB.DataContext = result;
+        surnamesLB.Items.Clear();
+        surnamesLB.Items.AddRange(result);
         countAbunentsLabel.Text = $"Количество абонентов: {count}";
+    }
+
+    private void targetStreetTextBox_TextChanged(object sender, EventArgs e)
+    {
+        if (targetStreetTextBox.Text != string.Empty)
+        {
+            GetSurnamesBtn.Text = "Поиск";
+            return;
+        }
+
+        GetSurnamesBtn.Text = "Показать всё";
     }
 }

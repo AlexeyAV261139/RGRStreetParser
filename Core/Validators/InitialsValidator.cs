@@ -13,10 +13,10 @@ public class InitialsValidator : AbstractValidator<Initials>
 
         RuleFor(initials => initials.Name)
             .NotNull()
-            .Length(2);
+            .Length(1);
 
         RuleFor(initials => initials.Patronymic)
             .NotNull()
-            .Length(2);
+            .Length(1);
     }
 }

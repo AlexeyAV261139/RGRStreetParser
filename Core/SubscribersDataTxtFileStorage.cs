@@ -18,7 +18,7 @@ public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
 
     public  IEnumerable<SubscribersData> GetSubscribersData()
     {
-        IEnumerable<string> lines = GetFileLines(FilePath);
+        string[] lines = GetFileLines(FilePath);
 
         IEnumerable<SubscribersData> subscribesData = lines
             .Select(GetSubscribersDataFromLine)
@@ -26,18 +26,19 @@ public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
 
         return subscribesData;
     }
-    private IEnumerable<string> GetFileLines(string filePath)
+    private string[] GetFileLines(string filePath)
     {
         if (!File.Exists(filePath))
             return [];
-        return File.ReadAllLines(filePath);
+        var lines = File.ReadAllLines(filePath);
+        return lines;
     }
 
     private SubscribersData? GetSubscribersDataFromLine(string line)
     {
         var data = line.Split(" – ");
 
-        if (data.Length != 6)
+        if (data.Length != 5)
             return null;
         
         string[] initialSubstrings = data[0].Split(" ");     
@@ -46,8 +47,8 @@ public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
         {
             Initials = new Initials(
                 surname: initialSubstrings[0],
-                name: initialSubstrings[1].Substring(0, 2),
-                patronymic: initialSubstrings[1].Substring(2, 2)),
+                name: initialSubstrings[1].Substring(0, 1),
+                patronymic: initialSubstrings[1].Substring(2, 1)),
             Adress = new Adress(
                 street: data[1],
                 houseNumber: data[2],
