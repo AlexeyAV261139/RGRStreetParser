@@ -5,9 +5,17 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RGRStreetParser", "RGRStreetParser\RGRStreetParser.csproj", "{471C6F81-BFF9-44E7-A490-3FD967A7B823}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject2", "TestProject2\TestProject2.csproj", "{89BB2A06-78FC-40C2-B001-99FD9AE2EE78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreetPArserTest", "TestProject2\StreetPArserTest.csproj", "{89BB2A06-78FC-40C2-B001-99FD9AE2EE78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{E7C478AF-8F2D-4205-A290-833F8978566F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{E7C478AF-8F2D-4205-A290-833F8978566F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{7BBDF3D0-35E0-42E6-B4DE-B37C6CC66102}"
+	ProjectSection(SolutionItems) = preProject
+		BadData.txt = BadData.txt
+		TestData.txt = TestData.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{3F593C3A-FB9E-422B-BC9E-02FAA4719391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{471C6F81-BFF9-44E7-A490-3FD967A7B823} = {3F593C3A-FB9E-422B-BC9E-02FAA4719391}
+		{89BB2A06-78FC-40C2-B001-99FD9AE2EE78} = {3F593C3A-FB9E-422B-BC9E-02FAA4719391}
+		{E7C478AF-8F2D-4205-A290-833F8978566F} = {3F593C3A-FB9E-422B-BC9E-02FAA4719391}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE016E1B-EDB3-4A04-9E14-13FFC2604700}

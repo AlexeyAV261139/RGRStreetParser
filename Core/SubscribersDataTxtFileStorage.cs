@@ -16,7 +16,7 @@ public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
         _validator = new();
     }
 
-    public  IEnumerable<SubscribersData> GetSubscribersData()
+    public IEnumerable<SubscribersData> GetSubscribersData()
     {
         string[] lines = GetFileLines(FilePath);
 
@@ -36,7 +36,9 @@ public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
 
     private SubscribersData? GetSubscribersDataFromLine(string line)
     {
-        var data = line.Split(" – ");
+        var data = line
+            .Trim()
+            .Split(" – ");
 
         if (data.Length != 5)
             return null;

@@ -1,9 +1,8 @@
 using RGRStreetParser;
-using RGRStreetParser.Interfaces;
 
 namespace TestProject2;
 
-public class UnitTest1
+public class SubscribersDataTxtFileStorageTests
 {
     [Fact]
     public void Test1()

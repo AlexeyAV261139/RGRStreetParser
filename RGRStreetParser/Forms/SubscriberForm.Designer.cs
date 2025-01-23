@@ -136,7 +136,7 @@ partial class SubscriberForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(469, 375);
+        ClientSize = new Size(469, 359);
         Controls.Add(groupBox2);
         Controls.Add(groupBox1);
         Controls.Add(GetSurnamesBtn);
