@@ -6,7 +6,7 @@ namespace RGRStreetParser;
 
 public partial class SubscriberForm : Form
 {
-    private ISubscribersDataStorage? _subscribersDataStorage;
+    private ISubscribersDataStorageGetter? _subscribersDataStorage;
 
     public SubscriberForm()
     {

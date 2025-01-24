@@ -5,7 +5,7 @@ using RGRStreetParser.Validators;
 
 namespace RGRStreetParser;
 
-public class SubscribersDataTxtFileStorage : ISubscribersDataStorage
+public class SubscribersDataTxtFileStorage : ISubscribersDataStorageGetter
 {
     private readonly SubscribersDataValidator _validator;
     public string FilePath { get;}

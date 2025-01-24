@@ -2,7 +2,7 @@
 
 namespace RGRStreetParser.Interfaces;
 
-public interface ISubscribersDataStorage
+public interface ISubscribersDataStorageGetter
 {
     public IEnumerable<SubscribersData> GetSubscribersData();
 }
